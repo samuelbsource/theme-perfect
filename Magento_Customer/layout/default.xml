@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="my-account-link">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Customer::links/my_account.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true"/>
+    </body>
+</page>

@@ -1,0 +1,11 @@
+<?php
+$addClass = $block->getData('addClass');
+$classes = ["header-content__col"];
+if ($addClass) {
+    $classes[] = $addClass;
+}
+$classStr = implode(' ', $classes);
+?>
+<div class="<?= $escaper->escapeHtml($classStr) ?>">
+    <?= $block->getChildHtml() ?>
+</div>

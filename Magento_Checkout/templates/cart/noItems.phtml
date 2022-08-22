@@ -1,0 +1,28 @@
+<?php
+/**  @var $block \Magento\Checkout\Block\Cart */
+?>
+<div class="cart-empty">
+    <?= $block->getChildHtml('checkout_cart_empty_widget') ?>
+    <div class="sad-cart-empty-wrapper">
+        <i class="fa-solid fa-face-sad-cry sad-cart-face"></i>
+        <p>
+            <?= $block->escapeHtml(__("Your cart is empty.")) ?>
+        </p>
+    </div>
+    <p><?= $block->escapeHtml(
+        __(
+            'Click <a href="%1">here</a> to continue shopping.',
+            $block->escapeUrl($block->getContinueShoppingUrl())
+        ),
+        ['a']
+    ) ?>
+    </p>
+    <?= $block->getChildHtml('shopping.cart.table.after') ?>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Checkout/js/empty-cart": {}
+    }
+}
+</script>

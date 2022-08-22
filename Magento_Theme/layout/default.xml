@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="header" destination="header.panel" before="-"/>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="header.col1" template="Magento_Theme::html/col.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="header.col2" template="Magento_Theme::html/col.phtml">
+                <arguments>
+                    <argument name="addClass" xsi:type="string">header-content__logo-col</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="header.col3" template="Magento_Theme::html/col.phtml">
+                <arguments>
+                    <argument name="addClass" xsi:type="string">header-content__search-col</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <move element="navigation.sections" destination="header.col1" before="-"/>
+        <move element="logo" destination="header.col2" before="-"/>
+
+        <referenceBlock name="advanced-search-link" remove="true"/>
+    </body>
+</page>
